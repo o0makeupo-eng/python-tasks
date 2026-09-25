@@ -35,7 +35,7 @@ print()
 base_attack = 10
 damage = base_attack + strength * 1.5
 crit_damage = damage * 2
-power_reserve = health // strength
+stamina = health // strength
 
 
 # --- Формуляр героя --------------------------------
@@ -47,7 +47,7 @@ print(f"Выносливость: {endurance}")
 print()
 print(f"Урон героя: {damage:.1f}")
 print(f"Критический урон: {crit_damage:.1f}")
-print(f"Запас силы: {power_reserve:.1f}")
+print(f"Запас силы: {stamina:.1f}")
 print()
 
 # --- Меню действий ---------------------------------
@@ -62,6 +62,31 @@ print()
 
 # --- Выбор героя -----------------------------------
 choice = input()
+
+match choice:
+    case "1":
+        print("Вы осмотрелись. Комната пуста, только пыль на полу.")
+
+    case "2":
+        stamina = stamina - 2
+        print("Вы осторожно идёте вперёд. Пол скрипит под ногами.")
+        print(f"Запас силы: {stamina:.1f}")
+
+    case "3":
+        stamina = stamina + 5 
+        print("Вы решили передохнуть и присели у ближайщего камня.")
+        print(f"Запас силы: {stamina:.1f}")
+
+    case "4": 
+        print("Вы решили прислушиться, но ничего не услышали.")
+
+    case "5":
+        health = health - 2 
+        print("Вы решили зажечь факел. В процессе вы пару раз поранились.")
+        print(f"Здоровье: {health}")
+        
+    case _:
+        print("Такого действия нет.")
 print()
 
 
