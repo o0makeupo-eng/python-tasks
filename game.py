@@ -14,15 +14,40 @@ frame = "=" * 21
 print(frame)
 print("  " + title + "  ")
 print(frame)
-
 print()
 
 print("Как зовут героя?")
 hero_name = input()
 
 print(f"Добро пожаловать, {hero_name}!")
-print("Ты входишь в подземелье. Здесь темно и пахнет сыростью.")
+print("Ты входишь в подземелье. Здесь холодно и пахнет сыростью.")
+print()
 
+print("Настройка героя.")
+print("Здоровье, сила, ловкость, выносливость — по одному числу в строке:")
+health = int(input())
+strength = int(input())
+agility = int(input())
+endurance = int(input())
+print()
+
+# --- Расчёт урона ----------------------------------
+base_attack = 10
+damage = base_attack + strength * 1.5
+crit_damage = damage * 2
+power_reserve = health // strength
+
+
+# --- Формуляр героя --------------------------------
+print("Характеристики героя:")
+print(f"Здоровье: {health}")
+print(f"Сила: {strength}")
+print(f"Ловкость: {agility}")
+print(f"Выносливость: {endurance}")
+print()
+print(f"Урон героя: {damage:.1f}")
+print(f"Критический урон: {crit_damage:.1f}")
+print(f"Запас силы: {power_reserve:.1f}")
 print()
 
 # --- Меню действий ---------------------------------
@@ -37,7 +62,8 @@ print()
 
 # --- Выбор героя -----------------------------------
 choice = input()
-# ответ пока не используем — разберём на 3 занятии
+print()
+
 
 # --- Прощание ---
 print(frame)
