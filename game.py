@@ -87,7 +87,7 @@ match choice:
         print(f"Здоровье: {health}")
 
     case "6": 
-        strikes = 6
+        strikes = 5
         total_damage = 0
         crit_count = 0
         print("Вы подходите к тренировочному чучелу.")
@@ -115,10 +115,10 @@ match choice:
         print(f"Общий урон: {total_damage:.1f}")
         print(f"Средний урон: {total_damage / strikes:.1f}")
 
-        stamina_cost = 4
-        stamina = stamina - stamina_cost
-        print(f"Тренировка отняла силы: -{stamina_cost}")
-
+        print()
+        print(f"Здоровье: {health}")
+        print(f"Запас сил: {stamina:.1f}")
+        
     case _:
         print("Такого действия нет.")
 print()
